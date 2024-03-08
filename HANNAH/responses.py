@@ -1,5 +1,5 @@
 """
-    A list of responses that is used by main.py for HANNAH to use
+    A list of responses that is used by main.py for ANNA to use
 
     Date: 2/21/2024
 """
@@ -8,10 +8,6 @@ import random
 
 CONST_RESPONSE: dict = {
     # Elaborate User Inputs
-    "(.*)i dont know": [
-        "How does it feel to not know?",
-        "What is it that you don't know?",
-    ],
     "(.*)i want to (.*)": [
         "Is it really that important that you {1}?",
         "Why do you want to {1}?",
@@ -25,9 +21,13 @@ CONST_RESPONSE: dict = {
         "What is the connection between the two?",
         "Why does it remind you of that?"
     ],
+    "(.*)but now(.*)": [
+        "Do you know what caused this change?",
+        "What happened to cause this change?",
+    ],
     # Emotions
     "(.*)(i feel |im feeling )?(anxious|sad|sadness|bad|terrible|horrible|terrified|tired)": [
-        "I'm sorry that you feel {2}. Could you tell me more about that?",
+        "Do you want to talk about why you feel {2}?",
         "What makes you feel {2}?",
         "It's okay. Do you know what makes you feel {2}?"
     ],
@@ -66,10 +66,9 @@ CONST_RESPONSE: dict = {
         "How would you feel if you could {1}?",
         "Why is it important that you could {1}?",
     ],
-    "(yes|no)": [
-        "Why is that?",
-        "You seem certain of that.",
-        "I see. Tell me a little more about that then.",
+    "(.*)i dont know": [
+        "How does it feel to not know?",
+        "What is it that you don't know?",
     ],
     # Greetings
     "(hello|hi|howdy|greetings|hey)(.*)": [
@@ -81,6 +80,11 @@ CONST_RESPONSE: dict = {
         "Hey. How are you feeling right now?",
     ],
     # Generic Responses
+    "(yes|no)": [
+        "Why is that?",
+        "You seem certain of that.",
+        "I see. Tell me a little more about that then.",
+    ],
     "(.*) ": [
         "Tell me more about that.",
         "Go on...",
